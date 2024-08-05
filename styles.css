@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primiry-color: #254d4d;
+    --text-dark: #171717;
+    --text-light: #737373;
+    --extra--light: #f4f6f5;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --header-font: "Merriweather", serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;;
+}
+
+a {
+    text-decoration: none;
+    transition: .3s;
+}
+
+ul {
+    list-style: none;
+}
+
+.section__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 5rem 1rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    position: fixed;
+    isolation: isolate;
+    width: 100%;
+    z-index: 9;
+}
+
+.header__wrapper {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primiry-color);
+}
+
+.section__header {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-family: var(--header-font);
+    color: var(--primiry-color);
+}
+
+.section__description {
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: var(--header-font);
+    color: var(--white);
+}
+
+.header__menu-btn {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.header__menu-btn span {
+    display: inline-block;
+    height: 3px;
+    width: 100%;
+    background: #fff;
+    transition: all .2s linear;
+}
+
+.header__menu-btn.close span:nth-child(2) {
+    display: none;
+}
+
+.header__menu-btn.close span:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 45%;
+}
+
+.header__menu-btn.close span:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -45%;
+}
+
+.header__links {
+    background: var(--primiry-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    transform: translateY(-100%);
+    position: relative;
+    z-index: -1;
+    transition: all .3s linear;
+}
+
+.header__links.open {
+    transform: translateY(0);
+}
+
+.header__links a {
+    font-weight: 500;
+    color: var(--white);
+}
+
+.header__search {
+    display: none;
+}
+
+@media(width > 768px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        max-width: var(--max-width);
+    }
+
+    .header__wrapper {
+        background: var(--white);
+    }
+
+    .logo a {
+        color: var(--primiry-color);
+    }
+
+    .header__menu-btn {
+        display: none;
+    }
+
+    .header__links {
+        position: static;
+        flex-direction: row;
+        background-color: transparent;
+        transform: none;
+        width: fit-content;
+        padding: 0;
+    }
+
+    .header__links a {
+        color: var(--primiry-color);
+        gap: 3rem;
+    }
+
+    .header__search {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1rem;
+        padding-right: 1rem;
+        width: 16rem;
+    }
+
+    .header__search input {
+        width: 0;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid var(--primiry-color);
+        font-size: 1rem;
+        line-height: 1.5rem;
+        color: var(--text-light);
+        transition: all .3s linear;
+        max-width: 15rem;
+    }
+
+    .header__search.open input {
+        width: 100%;
+    }
+
+    .header__search span {
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+}

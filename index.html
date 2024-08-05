@@ -3,9 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./styles.css">
+    <title>furni-shop</title>
 </head>
 <body>
-    <h1>hi!!!</h1>
+    <div class="container">
+    <header class="header">
+        <div class="header__wrapper">
+            <div class="logo">
+                <a class="logo__link" href="#">furni-shop</a>
+            </div>
+            <button class="header__menu-btn" id="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <ul class="header__links" id="header-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contacts">Contacts</a></li>
+        </ul>
+        <div class="header__search" id="header-search">
+            <input type="text" placeholder="Search">
+            <span id="search-icon">
+                <i class="ri-search-2-line"></i>
+            </span>
+        </div>
+    </header>
+    </div>
+    <script src="./script.js"></script>
 </body>
 </html>
